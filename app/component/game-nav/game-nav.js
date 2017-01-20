@@ -9,16 +9,22 @@ ngEscape.component('gameNav', {
   controllerAs: 'gameNavCtrl'
 });
 
-ngEscape.controller('GameNavController', ['$log', GameNavController]);
+ngEscape.controller('GameNavController', ['$log', 'playerService', GameNavController]);
 
-function GameNavController($log) {
+function GameNavController($log, playerService) {
   $log.debug('GameNavController');
 
   this.direction = {
     location: '',
   };
 
-  this.move = function() {
-    console.log('user moved', this.direction.location);
+  this.movePlayer = function() {
+    playerService.movePlayer(this.direction)
+    .then( location => {
+      $log.log(`player currently at ${location}`);
+    })
+    .catch( err => {
+      $log.error(err);
+    });
   };
 }
