@@ -1,7 +1,11 @@
 'use strict';
 
+const webpackConfig = require('./webpack.config.js');
+webpackConfig.entry = {};
+
 module.exports = function(config) {
   config.set({
+    webpack: webpackConfig,
     basePath: '',
     frameworks: ['jasmine'],
     files: [
