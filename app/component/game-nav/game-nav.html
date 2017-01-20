@@ -1,5 +1,5 @@
 <section class="game-nav">
-  <form name="game-nav" ng-submit="gameNavCtrl.move()">
-    <input type="text" ng-model="gameNavCtrl.direction.location">
+  <form name="game-nav" ng-submit="gameNavCtrl.movePlayer()">
+    <input type="text" ng-model="gameNavCtrl.direction.location" ng-change="gameNavCtrl.movePossibilities()">
   </form>
 </section>
