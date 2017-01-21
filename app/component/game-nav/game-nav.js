@@ -23,9 +23,6 @@ function GameNavController($log, playerService) {
     .then( location => {
       $log.log(`player currently at ${location}`);
     })
-    .then( () => {
-      playerService.moveOptions();
-    })
     .catch( err => {
       $log.error(err);
     });

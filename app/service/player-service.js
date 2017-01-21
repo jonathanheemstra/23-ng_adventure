@@ -19,6 +19,7 @@ function playerService($q, $log, mapService) {
     return new $q((resolve, reject) => {
 
       let movePossibilities = [];
+
       (function() {
         for (var option in mapService.mapData[player.location]) {
           if(/^option[1-9]*/.test(option)) movePossibilities.push(mapService.mapData[player.location][option]);
