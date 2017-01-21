@@ -11,7 +11,7 @@ function playerService($q, $log, mapService) {
   let service = {};
 
   let player = service.player = {
-    location: 'volcano',
+    location: 'beach',
     hp: 15
   };
 
@@ -25,11 +25,8 @@ function playerService($q, $log, mapService) {
         }
       }());
 
-      console.log('playerlocation', player.location);
-      console.log('movePossibilities', movePossibilities);
-
       let moveDirection = movePossibilities.indexOf(direction.location);
-      // TODO: validate that it's a viable direction
+
       if(moveDirection === -1) reject('not a viable move direction');
       if(moveDirection !== -1) player.location = direction.location;
 
