@@ -8,3 +8,4 @@ require('./service/map-service.js');
 require('./service/player-service.js');
 
 require('./component/game-nav/game-nav.js');
+require('./component/location/location.js');
