@@ -1,5 +1,7 @@
 'use strict';
 
+require('./scss/style.scss');
+
 const angular = require('angular');
 
 angular.module('ngEscape', []);

@@ -13,7 +13,7 @@ function playerService($q, $log, mapService) {
   let player = service.player = {
     location: 'beach',
     locationDesc: 'The beach is deserted, there is nothing around you and no signs of life. You spot in the distance a volcano. Your options are to head back out into the OCEAN and try to swim to rescue or head towards the VOLCANO',
-    image: 'http://ansimuz.com/site/wp-content/uploads/2015/01/urele-map.png'
+    image: '/app/images/beach.jpg'
   };
 
   console.log(player);
