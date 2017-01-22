@@ -45,7 +45,7 @@ function mapService($log) {
       option4: 'raft'
     },
     cave: {
-      desc: 'The cave appears as though it once was used by someone. There are markings on the walls but they don\'t make any sense. They just say wilson, over and over. After leaving the cave you come across a STREAM and you also realize you are in a thick JUNGLE filled with coconut trees.',
+      desc: 'The cave appears as though it once was used by someone. There are markings on the walls but they don\'t make any sense. The markings just say wilson, over and over. After leaving the cave you come across a STREAM and you also realize you are in a thick JUNGLE filled with coconut trees.',
       image: '/app/images/cave.jpg',
       option1: 'stream',
       option2: 'jungle'
