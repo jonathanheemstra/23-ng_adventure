@@ -9,9 +9,9 @@ ngEscape.component('gameNav', {
   controllerAs: 'gameNavCtrl'
 });
 
-ngEscape.controller('GameNavController', ['$log', 'playerService', GameNavController]);
+ngEscape.controller('GameNavController', ['$log', '$scope', '$window', 'playerService', GameNavController]);
 
-function GameNavController($log, playerService) {
+function GameNavController($log, $scope, $window, playerService) {
   $log.debug('GameNavController');
 
   this.direction = {
@@ -22,9 +22,11 @@ function GameNavController($log, playerService) {
     playerService.movePlayer(this.direction)
     .then( location => {
       $log.log(`player currently at ${location}`);
+      if( location === 'raft') $window.alert('You have ecaped the Island!!!');
     })
     .catch( err => {
       $log.error(err);
+      $window.alert('That is not a viable direction to move');
     });
   };
 }

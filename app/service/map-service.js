@@ -56,7 +56,8 @@ function mapService($log) {
     },
     ocean: {
       desc: 'The ocean while warm is filled with dangerous animals and reefs. It\'s not safe to try and swim to safety. Your only option is to head back to the BEACH.',
-      image: '/app/images/ocean.jpg'
+      image: '/app/images/ocean.jpg',
+      option1: 'beach'
     }
   };
 
