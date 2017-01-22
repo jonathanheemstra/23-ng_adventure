@@ -12,7 +12,7 @@ function mapService($log) {
 
   service.mapData = {
     beach: {
-      desc: 'The beach is deserted, there is nothing around you and no signs of life. You spot in the distance a volcano. Your options are to try and swim to rescue or head towards the VOLCANO',
+      desc: 'The beach is deserted, there is nothing around you and no signs of life. You spot in the distance a volcano. Your options are to head back out into the OCEAN and try to swim to rescue or head towards the VOLCANO',
       option1: 'ocean',
       option2: 'volcano'
     },
