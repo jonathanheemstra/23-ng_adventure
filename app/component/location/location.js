@@ -9,10 +9,10 @@ ngEscape.component('location', {
   controllerAs: 'locationCtrl'
 });
 
-ngEscape.controller('LocationController', ['$log', 'playerService', 'mapService', LocationController]);
+ngEscape.controller('LocationController', ['$log', 'playerService', LocationController]);
 
-function LocationController($log, playerService, mapService) {
+function LocationController($log, playerService) {
   $log.debug('LocationController');
 
-  this.locationDesc = mapService.mapData[playerService.player.location].desc;
+  this.locationDesc = playerService.player;
 }
