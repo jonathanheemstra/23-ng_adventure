@@ -14,5 +14,6 @@ ngEscape.controller('LocationController', ['$log', 'playerService', LocationCont
 function LocationController($log, playerService) {
   $log.debug('LocationController');
 
-  this.locationDesc = playerService.player;
+  this.playerService = playerService;
+
 }

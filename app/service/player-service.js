@@ -35,7 +35,7 @@ function playerService($q, $log, mapService) {
       let moveDirection = movePossibilities.indexOf(direction.location);
 
       if(moveDirection === -1) {
-        
+
         if(player.water <= 0) {
           player.profileImage = '/app/images/dead_mario.gif';
           return reject('you have died');
@@ -61,6 +61,14 @@ function playerService($q, $log, mapService) {
       console.log(player);
       return resolve(direction.location);
     });
+  };
+
+  service.getLocation = function() {
+    return player.locationDesc;
+  };
+
+  service.getImage = function() {
+    return player.image;
   };
 
   return service;

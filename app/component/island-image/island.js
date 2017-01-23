@@ -14,7 +14,6 @@ ngEscape.controller('IslandImageController', ['$log', 'playerService', IslandIma
 function IslandImageController($log, playerService) {
   $log.debug('IslandImageController');
 
-  this.islandImage = playerService.player;
+  this.playerService = playerService;
 
-  console.log(this.islandImage.image);
 }
