@@ -12,3 +12,4 @@ require('./service/player-service.js');
 require('./component/game-nav/game-nav.js');
 require('./component/location/location.js');
 require('./component/island-image/island.js');
+require('./component/player-stats/player-stats.js');

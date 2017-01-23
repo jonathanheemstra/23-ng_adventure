@@ -13,7 +13,10 @@ function playerService($q, $log, mapService) {
   let player = service.player = {
     location: 'beach',
     locationDesc: 'The beach is deserted, there is nothing around you and no signs of life. You spot in the distance a volcano. Your options are to head back out into the OCEAN and try to swim to rescue or head towards the VOLCANO',
-    image: '/app/images/beach.jpg'
+    image: '/app/images/beach.jpg',
+    turns: 0,
+    water: 10,
+    profileImage: '/app/images/mario.gif'
   };
 
   console.log(player);
@@ -31,12 +34,29 @@ function playerService($q, $log, mapService) {
 
       let moveDirection = movePossibilities.indexOf(direction.location);
 
-      if(moveDirection === -1) reject('not a viable move direction');
+      if(moveDirection === -1) {
+        
+        if(player.water <= 0) {
+          player.profileImage = '/app/images/dead_mario.gif';
+          return reject('you have died');
+        }
+
+        player.turns += 1;
+        player.water -= 1;
+
+
+        return reject('not a viable move direction');
+      }
+
       if(moveDirection !== -1) {
+        player.turns += 1;
+        player.water -= 1;
+
         player.location = direction.location;
         player.locationDesc = mapService.mapData[player.location].desc;
         player.image = mapService.mapData[player.location].image;
       }
+
 
       console.log(player);
       return resolve(direction.location);
