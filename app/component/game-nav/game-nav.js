@@ -22,11 +22,15 @@ function GameNavController($log, $scope, $window, playerService) {
     playerService.movePlayer(this.direction)
     .then( location => {
       $log.log(`player currently at ${location}`);
-      if( location === 'raft') $window.alert('You have ecaped the Island!!!');
+      if( location === 'raft') {
+        $window.alert('You have ecaped the Island!!!');
+        playerService.player.profileImage = '/app/images/mario_win.gif';
+      }
+
     })
     .catch( err => {
       $log.error(err);
-      $window.alert('That is not a viable direction to move');
+      $window.alert(err);
     });
   };
 }
